@@ -1,0 +1,46 @@
+#---
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: ace-deploy
+#spec:
+#  replicas: 2
+#  selector:
+#    matchLables:
+#      app: ace
+#  template:
+#    metadata:
+#      lables:
+#        app: ace
+#    spec:
+#      containers:
+#      - name: ace-container
+#        image: madhavdocker123/ace:v1
+#        ports:
+#        - containerPort: 7800
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ace-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ace
+  template:
+    metadata:
+      labels:
+        app: ace
+    spec:
+      containers:
+      - name: ace-container
+        image: madhavdocker123/ace:v1
+        ports:
+        - containerPort: 7800
+
+        env:
+        - name: LICENSE
+          value: accept     
+          
