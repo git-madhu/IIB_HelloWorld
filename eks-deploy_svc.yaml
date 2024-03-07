@@ -34,5 +34,7 @@ spec:
     - protocol: TCP
       port: 7800
       targetPort: 7800
-  type: LoadBalancer
+      nodePort: 30001 
+  type: NodePort
+ # type: LoadBalancer
           
