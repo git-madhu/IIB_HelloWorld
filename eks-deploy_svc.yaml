@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ace-container
-        image: madhavdocker123/ace:latest
+        image: madhavdocker123/ace:${DOCKER_IMAGE_VERSION}
         ports:
         - containerPort: 7800
 
