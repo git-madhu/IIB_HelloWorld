@@ -18,10 +18,11 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 7800
-
         env:
         - name: LICENSE
           value: accept
+      imagePullSecrets:
+      - name: my-docker-secret
 
 ---
 apiVersion: v1
