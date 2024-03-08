@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ace-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ace
+  template:
+    metadata:
+      labels:
+        app: ace
+    spec:
+      containers:
+      - name: ace-container
+        image: madhavdocker123/ace:v3
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 7800
+        env:
+        - name: LICENSE
+          value: accept
+#      imagePullSecrets:
+#      - name: my-docker-secret
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ace-service
+spec:
+  selector:
+    app: ace
+  ports:
+    - protocol: TCP
+      port: 7800
+      targetPort: 7800
+      nodePort: 30001 
+  type: NodePort
+ # type: LoadBalancer
