@@ -2,7 +2,7 @@ FROM ibmcom/ace
 
 USER root
 
-COPY HelloWorld.bar /home/aceuser/bars
+COPY HelloWorld.bar /home/aceuser/bars/
 
 RUN chmod -R ugo+rwx /home/aceuser
 
