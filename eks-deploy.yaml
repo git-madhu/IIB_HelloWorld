@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ace-container
-        image: madhavdocker123/helloace:version1
+        image: madhavdocker123/ace:${DOCKER_IMAGE_VERSION}
         imagePullPolicy: Always
         ports:
         - containerPort: 7800
